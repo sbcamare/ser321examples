@@ -194,15 +194,18 @@ class WebServer {
             builder.append("File not found: " + file);
           }
         } else if (request.contains("multiply?")) {
-          
+
           if(request.contains("num1=") && request.contains("num2")) {
             try { 
+
+              Map<String, String> query_pairs = new LinkedHashMap<String, String>();
+              query_pairs = splitQuery(request.replace("multiply?", ""));
               // extract required fields from parameters
               Integer num1 = Integer.parseInt(query_pairs.get("num1"));
               Integer num2 = Integer.parseInt(query_pairs.get("num2"));
-              Map<String, String> query_pairs = new LinkedHashMap<String, String>();
+              
               // extract path parameters
-              query_pairs = splitQuery(request.replace("multiply?", ""));
+              
               // do math
               Integer result = num1 * num2;
               // Generate response
