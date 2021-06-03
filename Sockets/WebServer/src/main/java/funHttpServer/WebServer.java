@@ -241,7 +241,7 @@ class WebServer {
           //System.out.println(json);
           try{
 
-            String json = fetchURL("https://api.github.com/" + query_pairs.get("query"));
+            //String json = fetchURL("https://api.github.com/" + query_pairs.get("query"));
             builder.append("Check the todos mentioned in the Java source file");
           // TODO: Parse the JSON returned by your fetch and create an appropriate
           // response
@@ -254,7 +254,7 @@ class WebServer {
               builder.append("\n");
 
             } catch (Exception e) {
-              builder.append("HTTP/1.1 400 Bad Request");
+              builder.append("HTTP/1.1 400 Bad Request\n");
             }
             
 
