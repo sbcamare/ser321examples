@@ -254,7 +254,7 @@ class WebServer {
               builder.append("\n");
 
             } catch (Exception e) {
-              builder.append("HTTP/1.1 400 Bad Request")
+              builder.append("HTTP/1.1 400 Bad Request");
             }
             
 
